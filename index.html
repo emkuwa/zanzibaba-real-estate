@@ -598,18 +598,22 @@
     };
 
     fetch("https://script.google.com/macros/s/AKfycbz0dBIUNUlUa_jJiBfEIvttQwIh3FDar8RCRcaBV3NiOfgJ3AC7DTY9gO5hkTSA68VyYA/exec", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: { "Content-Type": "application/json" }
-    })
-    .then(response => {
-      if (response.ok) {
-        alert("✅ Thank you! Your details have been submitted.");
-        form.reset();
-      } else {
-        alert("⚠️ Submission failed. Please try again.");
-      }
-    });
+  method: "POST",
+  body: JSON.stringify(data),
+  headers: { "Content-Type": "application/json" }
+})
+.then(response => {
+  if (response.ok) {
+    alert("✅ Thank you! Your details have been submitted.");
+    form.reset();
+  } else {
+    alert("⚠️ Submission failed. Please try again.");
+  }
+})
+.catch(error => {
+  console.error("Fetch error:", error);
+  alert("❌ Network error. Please check your connection.");
+});
   });
 </script>
 
