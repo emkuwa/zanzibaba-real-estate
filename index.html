@@ -585,8 +585,11 @@
                 });
             });
         });
-<script>
-  document.getElementById("leadForm").addEventListener("submit", function(e) {
+    });
+
+    // Contact Form Handler
+    document.getElementById("leadForm").addEventListener("submit", function(e) {
+
     e.preventDefault();
     const form = e.target;
    const data = {
@@ -616,6 +619,7 @@
   alert("❌ Network error. Please check your connection.");
         });
     });
+});
 </script>
 
 </body>
