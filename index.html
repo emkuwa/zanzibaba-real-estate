@@ -589,13 +589,14 @@
   document.getElementById("leadForm").addEventListener("submit", function(e) {
     e.preventDefault();
     const form = e.target;
-    const data = {
-      name: form.fullName.value,
-      email: form.email.value,
-      phone: form.phone.value,
-      property_type: form.propertyType.value,
-      budget: form.budget.value
-    };
+   const data = {
+  name: form.fullName.value,
+  email: form.email.value,
+  phone: form.phone.value,
+  property_type: form.propertyType.value,
+  budget: form.budget.value,
+  message: form.message.value // ✅ add this line
+};
 
     fetch("https://script.google.com/macros/s/AKfycbz0dBIUNUlUa_jJiBfEIvttQwIh3FDar8RCRcaBV3NiOfgJ3AC7DTY9gO5hkTSA68VyYA/exec", {
   method: "POST",
@@ -613,8 +614,8 @@
 .catch(error => {
   console.error("Fetch error:", error);
   alert("❌ Network error. Please check your connection.");
-});
-  });
+        });
+    });
 </script>
 
 </body>
